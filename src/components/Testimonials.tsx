@@ -1,9 +1,21 @@
 import React, { useState, useEffect } from 'react'
-import { FiStar, FiChevronLeft, FiChevronRight, FiMapPin } from 'react-icons/fi'
+import { Star, CaretLeft, CaretRight, MapPin, User } from 'phosphor-react'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
 
-const Testimonials = () => {
-  const [isVisible, setIsVisible] = useState(false)
-  const [currentSlide, setCurrentSlide] = useState(0)
+interface Testimonial {
+  id: number
+  name: string
+  location: string
+  rating: number
+  text: string
+  service: string
+}
+
+const Testimonials: React.FC = () => {
+  const [isVisible, setIsVisible] = useState<boolean>(false)
+  const [currentSlide, setCurrentSlide] = useState<number>(0)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,15 +39,14 @@ const Testimonials = () => {
     }
   }, [])
 
-  const testimonials = [
+  const testimonials: Testimonial[] = [
     {
       id: 1,
       name: 'Sarah Johnson',
       location: 'Downtown District',
       rating: 5,
       text: 'Brasouth Solutions transformed my kitchen with professional cabinet installation and electrical work. They were punctual, clean, and the quality exceeded my expectations. I highly recommend them!',
-      service: 'Kitchen Renovation',
-      image: '/api/placeholder/80/80'
+      service: 'Kitchen Renovation'
     },
     {
       id: 2,
@@ -43,8 +54,7 @@ const Testimonials = () => {
       location: 'Riverside Area',
       rating: 5,
       text: 'Called them for an emergency plumbing issue on a Sunday. They came out the same day and fixed the problem quickly and affordably. Great customer service and professional work.',
-      service: 'Emergency Plumbing',
-      image: '/api/placeholder/80/80'
+      service: 'Emergency Plumbing'
     },
     {
       id: 3,
@@ -52,8 +62,7 @@ const Testimonials = () => {
       location: 'Oak Grove',
       rating: 5,
       text: 'The team painted our entire house exterior and did an amazing job. They were careful with our landscaping, used quality materials, and finished ahead of schedule. Very impressed!',
-      service: 'Exterior Painting',
-      image: '/api/placeholder/80/80'
+      service: 'Exterior Painting'
     },
     {
       id: 4,
@@ -61,8 +70,7 @@ const Testimonials = () => {
       location: 'Maple Heights',
       rating: 5,
       text: 'Professional deck repair and staining service. They explained everything clearly, provided a fair estimate, and the results look fantastic. Will definitely use them again.',
-      service: 'Deck Restoration',
-      image: '/api/placeholder/80/80'
+      service: 'Deck Restoration'
     },
     {
       id: 5,
@@ -70,8 +78,7 @@ const Testimonials = () => {
       location: 'Cedar Park',
       rating: 5,
       text: 'From start to finish, Brasouth Solutions was professional and reliable. They installed new light fixtures and repaired drywall damage. Clean work and great communication throughout.',
-      service: 'Electrical & Repairs',
-      image: '/api/placeholder/80/80'
+      service: 'Electrical & Repairs'
     },
     {
       id: 6,
@@ -79,21 +86,27 @@ const Testimonials = () => {
       location: 'Pine Valley',
       rating: 5,
       text: 'Needed several small repairs around the house. They took care of everything in one visit - fixed a leaky faucet, repaired a door, and installed new shelving. Excellent value!',
-      service: 'Multiple Repairs',
-      image: '/api/placeholder/80/80'
+      service: 'Multiple Repairs'
     }
   ]
 
-  const nextSlide = () => {
+  const nextSlide = (): void => {
     setCurrentSlide((prev) => (prev + 1) % Math.ceil(testimonials.length / 2))
   }
 
-  const prevSlide = () => {
+  const prevSlide = (): void => {
     setCurrentSlide((prev) => (prev - 1 + Math.ceil(testimonials.length / 2)) % Math.ceil(testimonials.length / 2))
   }
 
-  const goToSlide = (index) => {
+  const goToSlide = (index: number): void => {
     setCurrentSlide(index)
+  }
+
+  const scrollToContact = (): void => {
+    const element = document.getElementById('contact')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   // Auto-advance slides
@@ -117,15 +130,15 @@ const Testimonials = () => {
 
         {/* Reviews Summary */}
         <div className={`text-center mb-12 ${isVisible ? 'slide-in-left visible' : 'slide-in-left'}`}>
-          <div className="inline-flex items-center space-x-2 bg-white px-8 py-4 rounded-full shadow-soft">
+          <Card className="inline-flex items-center space-x-2 bg-white px-8 py-4 shadow-soft border-0">
             <div className="flex items-center space-x-1">
               {[...Array(5)].map((_, i) => (
-                <FiStar key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                <Star key={i} className="w-5 h-5 text-yellow-400" weight="fill" />
               ))}
             </div>
             <span className="font-semibold text-lg text-neutral-900">4.9 out of 5</span>
             <span className="text-neutral-600">• 127 reviews</span>
-          </div>
+          </Card>
         </div>
 
         {/* Testimonials Slider */}
@@ -138,50 +151,52 @@ const Testimonials = () => {
               {Array.from({ length: Math.ceil(testimonials.length / 2) }, (_, slideIndex) => (
                 <div key={slideIndex} className="w-full flex-shrink-0 grid md:grid-cols-2 gap-8 px-4">
                   {testimonials.slice(slideIndex * 2, slideIndex * 2 + 2).map((testimonial, index) => (
-                    <div
+                    <Card
                       key={testimonial.id}
-                      className={`testimonial-card card relative ${
+                      className={`testimonial-card hover:shadow-lg transition-all duration-300 ${
                         isVisible ? 'fade-in visible' : 'fade-in'
                       }`}
                       style={{
                         animationDelay: `${index * 200}ms`
                       }}
                     >
-                      {/* Rating */}
-                      <div className="flex items-center space-x-1 mb-4">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <FiStar key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                        ))}
-                      </div>
-
-                      {/* Review Text */}
-                      <blockquote className="text-neutral-700 leading-relaxed mb-6 text-base">
-                        "{testimonial.text}"
-                      </blockquote>
-
-                      {/* Service Badge */}
-                      <div className="mb-4">
-                        <span className="inline-block bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-medium">
-                          {testimonial.service}
-                        </span>
-                      </div>
-
-                      {/* Customer Info */}
-                      <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-semibold">
-                          {testimonial.name.split(' ').map(n => n[0]).join('')}
+                      <CardContent className="p-6">
+                        {/* Rating */}
+                        <div className="flex items-center space-x-1 mb-4">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 text-yellow-400" weight="fill" />
+                          ))}
                         </div>
-                        <div>
-                          <h4 className="font-semibold text-neutral-900">
-                            {testimonial.name}
-                          </h4>
-                          <div className="flex items-center space-x-1 text-sm text-neutral-600">
-                            <FiMapPin className="w-3 h-3" />
-                            <span>{testimonial.location}</span>
+
+                        {/* Review Text */}
+                        <blockquote className="text-neutral-700 leading-relaxed mb-6 text-base">
+                          "{testimonial.text}"
+                        </blockquote>
+
+                        {/* Service Badge */}
+                        <div className="mb-4">
+                          <Badge className="bg-primary-100 text-primary-700 border-primary-200">
+                            {testimonial.service}
+                          </Badge>
+                        </div>
+
+                        {/* Customer Info */}
+                        <div className="flex items-center space-x-4">
+                          <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-semibold">
+                            <User className="w-6 h-6" weight="duotone" />
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-neutral-900">
+                              {testimonial.name}
+                            </h4>
+                            <div className="flex items-center space-x-1 text-sm text-neutral-600">
+                              <MapPin className="w-3 h-3" weight="duotone" />
+                              <span>{testimonial.location}</span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
+                      </CardContent>
+                    </Card>
                   ))}
                 </div>
               ))}
@@ -189,21 +204,25 @@ const Testimonials = () => {
           </div>
 
           {/* Navigation Buttons */}
-          <button
+          <Button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white shadow-medium rounded-full flex items-center justify-center text-neutral-600 hover:text-primary-600 hover:shadow-large transition-all duration-300"
+            variant="outline"
+            size="icon"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white shadow-medium rounded-full text-neutral-600 hover:text-primary-600 hover:shadow-large"
             aria-label="Previous testimonials"
           >
-            <FiChevronLeft className="w-6 h-6" />
-          </button>
+            <CaretLeft className="w-6 h-6" weight="bold" />
+          </Button>
 
-          <button
+          <Button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white shadow-medium rounded-full flex items-center justify-center text-neutral-600 hover:text-primary-600 hover:shadow-large transition-all duration-300"
+            variant="outline"
+            size="icon"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white shadow-medium rounded-full text-neutral-600 hover:text-primary-600 hover:shadow-large"
             aria-label="Next testimonials"
           >
-            <FiChevronRight className="w-6 h-6" />
-          </button>
+            <CaretRight className="w-6 h-6" weight="bold" />
+          </Button>
         </div>
 
         {/* Slide Indicators */}
@@ -230,7 +249,7 @@ const Testimonials = () => {
               <div className="font-bold text-lg text-neutral-900">Google</div>
               <div className="flex items-center justify-center space-x-1">
                 {[...Array(5)].map((_, i) => (
-                  <FiStar key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                  <Star key={i} className="w-4 h-4 text-yellow-400" weight="fill" />
                 ))}
                 <span className="text-sm text-neutral-600 ml-1">4.9</span>
               </div>
@@ -239,7 +258,7 @@ const Testimonials = () => {
               <div className="font-bold text-lg text-neutral-900">Yelp</div>
               <div className="flex items-center justify-center space-x-1">
                 {[...Array(5)].map((_, i) => (
-                  <FiStar key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                  <Star key={i} className="w-4 h-4 text-yellow-400" weight="fill" />
                 ))}
                 <span className="text-sm text-neutral-600 ml-1">4.8</span>
               </div>
@@ -248,7 +267,7 @@ const Testimonials = () => {
               <div className="font-bold text-lg text-neutral-900">Facebook</div>
               <div className="flex items-center justify-center space-x-1">
                 {[...Array(5)].map((_, i) => (
-                  <FiStar key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                  <Star key={i} className="w-4 h-4 text-yellow-400" weight="fill" />
                 ))}
                 <span className="text-sm text-neutral-600 ml-1">5.0</span>
               </div>
@@ -257,26 +276,24 @@ const Testimonials = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 bg-white rounded-2xl p-8 md:p-12 text-center shadow-soft">
-          <h3 className="font-heading font-bold text-2xl md:text-3xl text-neutral-900 mb-4">
-            Ready to Join Our Happy Customers?
-          </h3>
-          <p className="text-lg text-neutral-600 mb-8 max-w-2xl mx-auto">
-            Experience the same quality service and professionalism that our customers rave about. 
-            Get your free estimate today!
-          </p>
-          <button
-            onClick={() => {
-              const element = document.getElementById('contact')
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' })
-              }
-            }}
-            className="btn-primary text-lg"
-          >
-            Get Your Free Estimate
-          </button>
-        </div>
+        <Card className="mt-16 bg-white shadow-soft border-0">
+          <CardContent className="p-8 md:p-12 text-center">
+            <h3 className="font-heading font-bold text-2xl md:text-3xl text-neutral-900 mb-4">
+              Ready to Join Our Happy Customers?
+            </h3>
+            <p className="text-lg text-neutral-600 mb-8 max-w-2xl mx-auto">
+              Experience the same quality service and professionalism that our customers rave about. 
+              Get your free estimate today!
+            </p>
+            <Button
+              onClick={scrollToContact}
+              size="lg"
+              className="btn-primary"
+            >
+              Get Your Free Estimate
+            </Button>
+          </CardContent>
+        </Card>
       </div>
     </section>
   )

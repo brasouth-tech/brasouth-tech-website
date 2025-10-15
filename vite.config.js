@@ -1,9 +1,19 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+      "@/components": path.resolve(__dirname, "./src/components"),
+      "@/lib": path.resolve(__dirname, "./src/lib"),
+      "@/styles": path.resolve(__dirname, "./src/styles"),
+      "@/assets": path.resolve(__dirname, "./src/assets")
+    }
+  },
   css: {
     preprocessorOptions: {
       scss: {
@@ -20,12 +30,12 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
-    minify: 'terser',
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
-          icons: ['react-icons']
+          icons: ['phosphor-react']
         }
       }
     }

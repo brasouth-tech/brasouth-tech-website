@@ -1,23 +1,26 @@
 import React, { useState, useEffect } from 'react'
-import { FiPhone, FiMenu, FiX } from 'react-icons/fi'
+import { Phone, List, X } from 'phosphor-react'
+import { Button } from '@/components/ui/button'
+import logoImage from '@/assets/images/logo-new-colors.png'
+import { CONTACT_INFO } from '@/lib/contactInfo'
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+const Header: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+  const [isScrolled, setIsScrolled] = useState<boolean>(false)
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       setIsScrolled(window.scrollY > 50)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const toggleMenu = () => {
+  const toggleMenu = (): void => {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string): void => {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
@@ -32,21 +35,27 @@ const Header = () => {
         : 'bg-white/95 backdrop-blur-sm py-4'
     }`}>
       <div className="container">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between my-1">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">BS</span>
-            </div>
-            <div>
+          <button 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200"
+            aria-label="Return to top"
+          >
+            <img 
+              src={logoImage} 
+              alt="Brasouth Solutions Logo" 
+              className="h-12 w-auto object-contain"
+            />
+            {/* <div className="text-left">
               <h1 className="font-heading font-bold text-xl text-neutral-900">
                 Brasouth Solutions
               </h1>
               <p className="text-sm text-neutral-600 leading-tight">
                 Professional Handyman Services
               </p>
-            </div>
-          </div>
+            </div> */}
+          </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -79,18 +88,18 @@ const Header = () => {
           {/* Phone Number & CTA */}
           <div className="hidden lg:flex items-center space-x-4">
             <a 
-              href="tel:+15551234567"
+              href={CONTACT_INFO.phone.href}
               className="flex items-center space-x-2 text-primary-600 hover:text-primary-700 font-semibold transition-colors duration-200"
             >
-              <FiPhone className="w-5 h-5" />
-              <span>(555) 123-4567</span>
+              <Phone className="w-5 h-5" weight="duotone" />
+              <span>{CONTACT_INFO.phone.display}</span>
             </a>
-            <button
+            <Button
               onClick={() => scrollToSection('contact')}
               className="btn-primary text-sm"
             >
               Free Estimate
-            </button>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -100,9 +109,9 @@ const Header = () => {
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
-              <FiX className="w-6 h-6 text-neutral-700" />
+              <X className="w-6 h-6 text-neutral-700" weight="bold" />
             ) : (
-              <FiMenu className="w-6 h-6 text-neutral-700" />
+              <List className="w-6 h-6 text-neutral-700" weight="bold" />
             )}
           </button>
         </div>
@@ -138,18 +147,18 @@ const Header = () => {
             </button>
             <div className="px-4 pt-2 space-y-3">
               <a 
-                href="tel:+15551234567"
+                href={CONTACT_INFO.phone.href}
                 className="flex items-center justify-center space-x-2 py-3 text-primary-600 font-semibold border border-primary-200 rounded-lg hover:bg-primary-50 transition-all duration-200"
               >
-                <FiPhone className="w-5 h-5" />
-                <span>(555) 123-4567</span>
+                <Phone className="w-5 h-5" weight="duotone" />
+                <span>{CONTACT_INFO.phone.display}</span>
               </a>
-              <button
+              <Button
                 onClick={() => scrollToSection('contact')}
                 className="btn-primary w-full"
               >
                 Get Free Estimate
-              </button>
+              </Button>
             </div>
           </nav>
         </div>

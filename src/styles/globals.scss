@@ -5,6 +5,70 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+ 
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+ 
+    --primary: 207 90% 54%;
+    --primary-foreground: 210 20% 98%;
+ 
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+ 
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+ 
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 207 90% 54%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+ 
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+ 
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+ 
+    --primary: 207 90% 54%;
+    --primary-foreground: 210 20% 98%;
+ 
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+ 
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+ 
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+ 
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 207 90% 54%;
+  }
+}
+
+@layer base {
   html {
     scroll-behavior: smooth;
   }
@@ -31,27 +95,27 @@
 @layer components {
   // Button Components
   .btn-primary {
-    @apply bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
 
     &:active {
       @apply scale-95;
     }
 
     &:focus {
-      @apply ring-4 ring-blue-200 outline-none;
+      @apply ring-4 ring-primary-200 outline-none;
     }
   }
 
   .btn-secondary {
-    @apply bg-white border-2 border-blue-500 text-blue-600 hover:bg-blue-50 font-semibold py-3 px-8 rounded-lg transition-all duration-300;
+    @apply bg-white border-2 border-primary-500 text-primary-600 hover:bg-primary-50 font-semibold py-3 px-8 rounded-lg transition-all duration-300;
 
     &:focus {
-      @apply ring-4 ring-blue-200 outline-none;
+      @apply ring-4 ring-primary-200 outline-none;
     }
   }
 
   .btn-outline {
-    @apply border-2 border-gray-300 text-gray-700 hover:border-blue-500 hover:text-blue-600 font-medium py-3 px-6 rounded-lg transition-all duration-300;
+    @apply border-2 border-gray-300 text-gray-700 hover:border-primary-500 hover:text-primary-600 font-medium py-3 px-6 rounded-lg transition-all duration-300;
   }
 
   // Card Components
@@ -65,7 +129,7 @@
 
   // Form Components
   .form-input {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-4 focus:ring-blue-200 focus:border-blue-500 outline-none transition-all duration-300;
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-4 focus:ring-primary-200 focus:border-primary-500 outline-none transition-all duration-300;
 
     &::placeholder {
       @apply text-gray-400;
