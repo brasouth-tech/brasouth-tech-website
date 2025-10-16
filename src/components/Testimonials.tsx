@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Star, CaretLeft, CaretRight, MapPin, User } from 'phosphor-react'
+import { Star, CaretLeft, CaretRight, MapPin, User, Quotes } from 'phosphor-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -142,14 +142,14 @@ const Testimonials: React.FC = () => {
         </div>
 
         {/* Testimonials Slider */}
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-6xl mx-auto px-4">
           <div className="overflow-hidden">
             <div 
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {Array.from({ length: Math.ceil(testimonials.length / 2) }, (_, slideIndex) => (
-                <div key={slideIndex} className="w-full flex-shrink-0 grid md:grid-cols-2 gap-8 px-4">
+                <div key={slideIndex} className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 px-2 md:px-4">
                   {testimonials.slice(slideIndex * 2, slideIndex * 2 + 2).map((testimonial, index) => (
                     <Card
                       key={testimonial.id}
@@ -160,17 +160,22 @@ const Testimonials: React.FC = () => {
                         animationDelay: `${index * 200}ms`
                       }}
                     >
-                      <CardContent className="p-6">
+                      <CardContent className="p-6 relative">
+                        {/* Quotation Icon */}
+                        <div className="absolute top-4 left-4 opacity-20">
+                          <Quotes className="w-8 h-8 text-primary-500" weight="fill" />
+                        </div>
+
                         {/* Rating */}
-                        <div className="flex items-center space-x-1 mb-4">
+                        <div className="flex items-center space-x-1 mb-4 mt-4">
                           {[...Array(testimonial.rating)].map((_, i) => (
                             <Star key={i} className="w-4 h-4 text-yellow-400" weight="fill" />
                           ))}
                         </div>
 
                         {/* Review Text */}
-                        <blockquote className="text-neutral-700 leading-relaxed mb-6 text-base">
-                          "{testimonial.text}"
+                        <blockquote className="text-neutral-700 leading-relaxed mb-6 text-base pl-4">
+                          {testimonial.text}
                         </blockquote>
 
                         {/* Service Badge */}
@@ -208,20 +213,20 @@ const Testimonials: React.FC = () => {
             onClick={prevSlide}
             variant="outline"
             size="icon"
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white shadow-medium rounded-full text-neutral-600 hover:text-primary-600 hover:shadow-large"
+            className="absolute left-0 sm:-left-4 top-1/2 -translate-y-1/2 -translate-x-0 sm:-translate-x-4 w-10 h-10 sm:w-12 sm:h-12 bg-white shadow-medium rounded-full text-neutral-600 hover:text-primary-600 hover:shadow-large z-10"
             aria-label="Previous testimonials"
           >
-            <CaretLeft className="w-6 h-6" weight="bold" />
+            <CaretLeft className="w-4 h-4 sm:w-6 sm:h-6" weight="bold" />
           </Button>
 
           <Button
             onClick={nextSlide}
             variant="outline"
             size="icon"
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white shadow-medium rounded-full text-neutral-600 hover:text-primary-600 hover:shadow-large"
+            className="absolute right-0 sm:-right-4 top-1/2 -translate-y-1/2 translate-x-0 sm:translate-x-4 w-10 h-10 sm:w-12 sm:h-12 bg-white shadow-medium rounded-full text-neutral-600 hover:text-primary-600 hover:shadow-large z-10"
             aria-label="Next testimonials"
           >
-            <CaretRight className="w-6 h-6" weight="bold" />
+            <CaretRight className="w-4 h-4 sm:w-6 sm:h-6" weight="bold" />
           </Button>
         </div>
 
@@ -242,34 +247,34 @@ const Testimonials: React.FC = () => {
         </div>
 
         {/* Review Platforms */}
-        <div className="mt-16 text-center">
-          <p className="text-neutral-600 mb-6">Find us on popular review platforms:</p>
-          <div className="flex justify-center items-center space-x-8 opacity-60">
+        <div className="mt-12 md:mt-16 text-center px-4">
+          <p className="text-neutral-600 mb-4 md:mb-6 text-sm md:text-base">Find us on popular review platforms:</p>
+          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-8 opacity-60">
             <div className="text-center">
-              <div className="font-bold text-lg text-neutral-900">Google</div>
+              <div className="font-bold text-base md:text-lg text-neutral-900">Google</div>
               <div className="flex items-center justify-center space-x-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-yellow-400" weight="fill" />
+                  <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400" weight="fill" />
                 ))}
-                <span className="text-sm text-neutral-600 ml-1">4.9</span>
+                <span className="text-xs sm:text-sm text-neutral-600 ml-1">4.9</span>
               </div>
             </div>
             <div className="text-center">
-              <div className="font-bold text-lg text-neutral-900">Yelp</div>
+              <div className="font-bold text-base md:text-lg text-neutral-900">Yelp</div>
               <div className="flex items-center justify-center space-x-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-yellow-400" weight="fill" />
+                  <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400" weight="fill" />
                 ))}
-                <span className="text-sm text-neutral-600 ml-1">4.8</span>
+                <span className="text-xs sm:text-sm text-neutral-600 ml-1">4.8</span>
               </div>
             </div>
             <div className="text-center">
-              <div className="font-bold text-lg text-neutral-900">Facebook</div>
+              <div className="font-bold text-base md:text-lg text-neutral-900">Facebook</div>
               <div className="flex items-center justify-center space-x-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-yellow-400" weight="fill" />
+                  <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400" weight="fill" />
                 ))}
-                <span className="text-sm text-neutral-600 ml-1">5.0</span>
+                <span className="text-xs sm:text-sm text-neutral-600 ml-1">5.0</span>
               </div>
             </div>
           </div>

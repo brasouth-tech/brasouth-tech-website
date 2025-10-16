@@ -27,9 +27,9 @@ function App(): JSX.Element {
         <link rel="canonical" href={CONTACT_INFO.website.canonical} />
       </Helmet>
 
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white overflow-x-hidden">
         <Header />
-        <main>
+        <main className="pt-20 md:pt-24">
           <Hero />
           <Services />
           <WhyChooseUs />

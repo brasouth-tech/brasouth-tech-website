@@ -81,8 +81,9 @@ const Services: React.FC = () => {
       description: 'Quick fixes for leaks, clogs, and plumbing installations.',
       features: [
         { name: 'Leak repairs' },
-        { name: 'Faucet installation' },
-        { name: 'Drain cleaning' }
+        { name: 'Toilet installation/replacement' },
+        { name: 'Faucet installation/replacement' },
+        // { name: 'Drain cleaning' }
       ]
     },
     {
@@ -128,16 +129,16 @@ const Services: React.FC = () => {
         { name: 'Patio maintenance' }
       ]
     },
-    {
-      icon: Gear,
-      title: 'HVAC Maintenance',
-      description: 'Basic HVAC maintenance and filter replacement services.',
-      features: [
-        { name: 'Filter replacement' },
-        { name: 'Vent cleaning' },
-        { name: 'Thermostat install' }
-      ]
-    },
+    // {
+    //   icon: Gear,
+    //   title: 'HVAC Maintenance',
+    //   description: 'Basic HVAC maintenance and filter replacement services.',
+    //   features: [
+    //     { name: 'Filter replacement' },
+    //     { name: 'Vent cleaning' },
+    //     { name: 'Thermostat install' }
+    //   ]
+    // },
     {
       icon: House,
       title: 'Flooring Services',
@@ -235,7 +236,7 @@ const Services: React.FC = () => {
         {/* Emergency Service CTA */}
         <div className="mt-16 bg-gradient-primary rounded-2xl p-8 md:p-12 text-center text-white shadow-large">
           <div className="max-w-2xl mx-auto space-y-6">
-            <h3 className="font-heading font-bold text-2xl md:text-3xl">
+            <h3 className="text-white font-heading font-bold text-2xl md:text-3xl">
               Need Emergency Repairs?
             </h3>
             <p className="text-lg text-blue-100">

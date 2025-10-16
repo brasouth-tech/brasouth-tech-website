@@ -215,7 +215,47 @@ const Contact: React.FC = () => {
 
           {/* Contact Form */}
           <div className={`lg:col-span-2 ${isVisible ? 'slide-in-right visible' : 'slide-in-right'}`}>
-            <Card className="bg-neutral-50">
+            <Card className="bg-neutral-50 relative">
+              {/* Maintenance Backdrop */}
+              <div className="absolute inset-0 bg-white/90 backdrop-blur-sm z-10 rounded-lg flex items-center justify-center">
+                <div className="text-center p-8">
+                  <div className="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <h3 className="font-heading font-bold text-xl text-neutral-900 mb-2">
+                    Under Maintenance
+                  </h3>
+                  <p className="text-neutral-600 mb-6 max-w-md">
+                    Our contact form is temporarily under maintenance. Please contact us directly using the information provided.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <Button
+                      asChild
+                      size="sm"
+                      className="bg-primary-500 hover:bg-primary-600 text-white"
+                    >
+                      <a href={CONTACT_INFO.phone.href} className="flex items-center space-x-2">
+                        <Phone className="w-4 h-4" weight="duotone" />
+                        <span>Call Now</span>
+                      </a>
+                    </Button>
+                    <Button
+                      asChild
+                      size="sm"
+                      variant="outline"
+                      className="border-neutral-300"
+                    >
+                      <a href={CONTACT_INFO.email.href} className="flex items-center space-x-2">
+                        <Envelope className="w-4 h-4" weight="duotone" />
+                        <span>Send Email</span>
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+              
               <CardHeader>
                 <CardTitle className="font-heading font-bold text-2xl text-neutral-900">
                   Request Your Free Estimate

@@ -34,18 +34,18 @@ const Header: React.FC = () => {
         ? 'bg-white shadow-medium py-2' 
         : 'bg-white/95 backdrop-blur-sm py-4'
     }`}>
-      <div className="container">
+      <div className="container px-4 md:px-8">
         <div className="flex items-center justify-between my-1">
           {/* Logo */}
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200"
+            className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200 flex-shrink-0"
             aria-label="Return to top"
           >
             <img 
               src={logoImage} 
               alt="Brasouth Solutions Logo" 
-              className="h-12 w-auto object-contain"
+              className="h-10 sm:h-12 w-auto object-contain"
             />
             {/* <div className="text-left">
               <h1 className="font-heading font-bold text-xl text-neutral-900">
