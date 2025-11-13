@@ -1,0 +1,12 @@
+// Component exports - Landing Page Components
+export { default as Hero } from './Hero'
+export { default as Footer } from './Footer'
+export { default as GallerySection } from './GallerySection'
+export { default as ServicesShowcaseSection } from './ServicesShowcaseSection'
+export { default as InsuranceBadge } from './InsuranceBadge'
+export { default as TestimonialsSection } from './TestimonialsSection'
+export { default as TrustSection } from './TrustSection'
+export { default as SolutionSection } from './SolutionSection'
+export { default as ProblemSection } from './ProblemSection'
+export { default as FinalCTASection } from './FinalCTASection'
+export { default as BenefitsSection } from './BenefitsSection'

@@ -1,5 +1,6 @@
 import { BUSINESS_INFO, CONTACT_INFO } from "@/lib/constants";
 import { Clock, MapPin, Phone } from "phosphor-react";
+import InsuranceBadge from './InsuranceBadge';
 
 const Footer = () => {
   return (
@@ -33,9 +34,9 @@ const Footer = () => {
               <p className="text-neutral-300">
                 {CONTACT_INFO.address.serviceArea}
               </p>
-              <p className="text-sm text-neutral-400 mt-1">
-                Bonded & Insured
-              </p>
+              <div className="mt-2">
+                <InsuranceBadge variant="footer" />
+              </div>
             </div>
 
             <div className="flex flex-col items-center">
@@ -58,15 +59,7 @@ const Footer = () => {
             <div className="flex justify-center space-x-6 text-sm text-neutral-500">
               <span>•</span>
               <span>{BUSINESS_INFO.insurance}</span>
-              <span>•</span>
-              <span>BBB A+ Rating</span>
             </div>
-
-            <p className="text-xs text-neutral-600 mt-4">
-              This is a high-conversion sales page. Professional photography and
-              certifications should replace placeholder content before going
-              live.
-            </p>
           </div>
         </div>
       </div>

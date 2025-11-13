@@ -1,8 +1,9 @@
 import { trackConversion } from '@/lib/analytics'
 import { BUSINESS_INFO, CONTACT_INFO } from '@/lib/constants'
-import { Clock, Phone, Shield, Star, Wrench } from 'phosphor-react'
+import { Clock, Phone, Shield, Star } from 'phosphor-react'
 import { Badge } from './ui/badge'
 import { Button } from './ui/button'
+import InsuranceBadge from './InsuranceBadge'
 const Hero = () => {
   const handlePhoneClick = () => {
     trackConversion('hero_phone_click')
@@ -25,9 +26,7 @@ const Hero = () => {
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-3">
                 {/* <h1 className="font-heading font-bold text-lg sm:text-2xl whitespace-nowrap">{BUSINESS_INFO.name}</h1> */}
-                <Badge className="bg-secondary-500 text-white text-xs sm:text-sm px-2 py-1">
-                  BONDED & INSURED
-                </Badge>
+                <InsuranceBadge variant="header" showDetails={false} />
               </div>
             </div>
             <Button
@@ -85,7 +84,7 @@ const Hero = () => {
                   <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-secondary-400 flex-shrink-0" weight="duotone" />
                   <div className="min-w-0">
                     <p className="font-bold text-sm sm:text-base">Bonded & Insured</p>
-                    <p className="text-xs sm:text-sm text-blue-200">Full Coverage</p>
+                    <p className="text-xs sm:text-sm text-blue-200">Verified Full Coverage</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2 sm:space-x-3">
@@ -143,24 +142,25 @@ const Hero = () => {
 
             {/* Right Column - Visual Trust Elements */}
             <div className="space-y-6 sm:space-y-8 mt-8 lg:mt-0">
-              {/* Hero Image Placeholder */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 p-4 sm:p-6 lg:p-8 shadow-2xl mx-auto max-w-md lg:max-w-none">
-                <div className="aspect-video bg-gradient-to-br from-white/20 to-white/10 rounded-xl flex items-center justify-center">
-                  <div className="text-center p-4">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 mx-auto mb-3 sm:mb-4 bg-secondary-500 rounded-full flex items-center justify-center">
-                      <Wrench className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-white" weight="duotone" />
+              {/* Hero Professional Image */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 p-3 sm:p-4 lg:p-6 shadow-2xl mx-auto max-w-md lg:max-w-none">
+                <div className="aspect-video rounded-xl overflow-hidden relative">
+                  <img 
+                    src="/marketing/crew-ladder-one.jpg" 
+                    alt="Professional Brasouth Solutions handyman team working on quality home repairs with safety equipment and professional tools"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end">
+                    <div className="text-white p-4 w-full">
+                      <h3 className="font-bold text-lg sm:text-xl mb-1">Professional Team</h3>
+                      <p className="text-sm sm:text-base opacity-90">Bonded & Insured Experts</p>
                     </div>
-                    <h3 className="font-bold text-lg sm:text-xl mb-1 sm:mb-2">Professional Service</h3>
-                    <p className="text-blue-100 text-sm sm:text-base">Quality Repairs You Can Trust</p>
                   </div>
                 </div>
               </div>
 
-              {/* Quality Guarantee */}
-              <div className="bg-secondary-500 text-white p-4 sm:p-6 rounded-xl text-center shadow-xl mx-auto max-w-md lg:max-w-none">
-                <h3 className="font-bold text-lg sm:text-xl lg:text-2xl mb-2">QUALITY GUARANTEE</h3>
-                <p className="text-sm sm:text-base lg:text-lg">100% satisfaction guaranteed on all repairs. Bonded & Insured for your protection.</p>
-              </div>
+              {/* Insurance Verification */}
+              <InsuranceBadge variant="hero" className="mx-auto max-w-md lg:max-w-none" />
 
               {/* Quick Stats */}
               <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-md mx-auto lg:max-w-none">
