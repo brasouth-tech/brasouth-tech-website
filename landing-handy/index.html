@@ -6,36 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
     <title>Professional Home Repairs - Quality Handyman Services | Brasouth Solutions</title>
     
-    <!-- INSERT GOOGLE ADS TRACKING CODE HERE -->
-    <!-- Global site tag (gtag.js) - Google Ads: Replace with your Google Ads ID -->
-    <!--
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+    <!-- Google Global Site Tag (gtag.js) - Google Ads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17667506779"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'AW-XXXXXXXXXX');
+      gtag('config', 'AW-17667506779');
     </script>
-    -->
     
-    <!-- Google Ads Conversion Event Snippet for Phone Calls -->
-    <!--
+    <!-- Google Ads Conversion Event Snippet - Ready for conversion tracking -->
     <script>
-      function gtag_report_conversion(url) {
+      // Conversion tracking function for phone calls
+      function gtag_report_conversion_phone(url) {
         var callback = function () {
           if (typeof(url) != 'undefined') {
             window.location = url;
           }
         };
         gtag('event', 'conversion', {
-            'send_to': 'AW-XXXXXXXXXX/XXXXXXXXXX',
+            'send_to': 'AW-17667506779/d12ZCOv0178bENuEw-hB', // Replace CONVERSION_LABEL_PHONE with actual conversion label
             'event_callback': callback
         });
         return false;
       }
+      
+      // Conversion tracking function for form submissions
+      function gtag_report_conversion_form() {
+        gtag('event', 'conversion', {
+            'send_to': 'AW-17667506779/yP4nCOG1uLAbENuEw-hB' // Replace CONVERSION_LABEL_FORM with actual conversion label
+        });
+      }
     </script>
-    -->
-    <!-- END GOOGLE ADS TRACKING CODE -->
     
     <meta name="description" content="Professional handyman services for quality home repairs. Bonded & insured experts providing reliable, same-day service. Call now for trusted home repairs!" />
     <meta name="keywords" content="professional handyman, quality home repairs, bonded insured handyman, reliable repair service, same day handyman, trusted home repairs" />

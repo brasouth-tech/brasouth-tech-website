@@ -5,8 +5,9 @@ export const trackConversion = (eventName: string, value?: number) => {
   // Google Ads Conversion Tracking
   if (typeof window !== 'undefined' && (window as any).gtag) {
     (window as any).gtag('event', 'conversion', {
-      'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL', // Replace with actual conversion ID
+      'send_to': 'AW-17667506779/d12ZCOv0178bENuEw-hB', // Replace CONVERSION_LABEL with actual conversion label from Google Ads
       'event_category': 'emergency_repair',
+      'currency': 'USD',
       'event_label': eventName,
       'value': value || 1
     })
@@ -36,8 +37,18 @@ export const trackConversion = (eventName: string, value?: number) => {
 
 export const trackPhoneCall = () => {
   trackConversion('phone_call', 1)
+  
+  // Also use the global gtag conversion function if available
+  if (typeof window !== 'undefined' && (window as any).gtag_report_conversion_phone) {
+    (window as any).gtag_report_conversion_phone()
+  }
 }
 
 export const trackFormSubmit = () => {
   trackConversion('form_submit', 1)
+  
+  // Also use the global gtag conversion function if available
+  if (typeof window !== 'undefined' && (window as any).gtag_report_conversion_form) {
+    (window as any).gtag_report_conversion_form()
+  }
 }
