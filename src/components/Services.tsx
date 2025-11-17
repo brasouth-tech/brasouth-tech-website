@@ -26,6 +26,7 @@ interface Service {
   title: string
   description: string
   features: ServiceFeature[]
+  image?: string
 }
 
 const Services: React.FC = () => {
@@ -59,6 +60,7 @@ const Services: React.FC = () => {
       icon: House,
       title: 'Home Repairs',
       description: 'Fix holes in walls, repair doors, windows, and general maintenance issues.',
+      image: '/marketing/ceiling-one.jpg',
       features: [
         { name: 'Drywall repair' },
         { name: 'Door & window fixes' },
@@ -69,6 +71,7 @@ const Services: React.FC = () => {
       icon: Lightning,
       title: 'Electrical Work',
       description: 'Safe and professional electrical repairs and installations by our skilled handymans.',
+      image: '/marketing/lightning-one.jpg',
       features: [
         { name: 'Outlet installation' },
         { name: 'Light fixture setup' },
@@ -100,6 +103,7 @@ const Services: React.FC = () => {
       icon: Wrench,
       title: 'Carpentry',
       description: 'Custom woodwork, shelving, and furniture assembly services.',
+      image: '/marketing/furniture-assembly-one.jpg',
       features: [
         { name: 'Custom shelving' },
         { name: 'Furniture assembly' },
@@ -123,6 +127,7 @@ const Services: React.FC = () => {
       icon: Wrench,
       title: 'Deck & Patio Repair',
       description: 'Restore and maintain your outdoor spaces for year-round enjoyment.',
+      image: '/marketing/deck-one.jpg',
       features: [
         { name: 'Deck staining' },
         { name: 'Railing repair' },
@@ -185,9 +190,20 @@ const Services: React.FC = () => {
               }}
             >
               <CardHeader className="text-center space-y-4">
-                <div className="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4 shadow-medium">
-                  <service.icon className="w-8 h-8 text-white" weight="duotone" />
-                </div>
+                {service.image ? (
+                  <div className="w-full h-48 mb-4 rounded-xl overflow-hidden shadow-medium">
+                    <img 
+                      src={service.image} 
+                      alt={`${service.title} - Professional handyman services by Brasouth Solutions`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4 shadow-medium">
+                    <service.icon className="w-8 h-8 text-white" weight="duotone" />
+                  </div>
+                )}
                 
                 <CardTitle className="font-heading font-semibold text-xl text-neutral-900">
                   {service.title}

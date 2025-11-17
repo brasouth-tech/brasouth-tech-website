@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import {
   Contact,
   Footer,
+  Gallery,
   Header,
   Hero,
   Services,
@@ -33,6 +34,7 @@ function App(): JSX.Element {
           <Hero />
           <Services />
           <WhyChooseUs />
+          <Gallery />
           <Testimonials />
           <Contact />
         </main>

@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CONTACT_INFO } from "@/lib/contactInfo";
-import { Clock, Image as ImageIcon, Phone, Shield, Star } from "phosphor-react";
+import { Clock, Phone, Shield, Star } from "phosphor-react";
 import React, { useEffect, useState } from "react";
 
 const Hero: React.FC = () => {
@@ -128,23 +128,23 @@ const Hero: React.FC = () => {
             }`}
           >
             <div className="relative px-4 sm:px-8 md:px-0">
-              {/* Main Image Placeholder */}
+              {/* Main Hero Image */}
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8 shadow-2xl mx-auto max-w-lg md:max-w-none">
-                <div className="aspect-video bg-gradient-to-br from-white/20 to-white/10 rounded-xl flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center">
-                      <ImageIcon
-                        className="w-8 h-8 md:w-10 md:h-10"
-                        weight="duotone"
-                      />
-                    </div>
-                    <h3 className="font-semibold text-base md:text-lg mb-2">
-                      Professional Work Showcase
-                    </h3>
-                    <p className="text-xs md:text-sm text-blue-100">
-                      Before & After Photos
-                    </p>
-                  </div>
+                <div className="aspect-video rounded-xl overflow-hidden">
+                  <img
+                    src="/marketing/crew-ladder-one.jpg"
+                    alt="Professional handyman crew working with ladder - Brasouth Solutions team providing quality home repair services"
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                  />
+                </div>
+                <div className="mt-4 text-center">
+                  <h3 className="font-semibold text-base md:text-lg mb-2 text-white">
+                    Professional Work in Action
+                  </h3>
+                  <p className="text-xs md:text-sm text-blue-100">
+                    Trusted by 500+ Local Homeowners
+                  </p>
                 </div>
               </div>
 
