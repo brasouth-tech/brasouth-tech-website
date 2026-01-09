@@ -142,13 +142,14 @@ const SolutionSection = () => {
                 size="lg"
                 className="w-full bg-secondary-500 hover:bg-secondary-600 text-white font-black text-base sm:text-lg lg:text-xl py-4 sm:py-6 lg:py-8 mb-3 sm:mb-4 transform hover:scale-105 shadow-2xl"
                 onClick={handlePhoneClick}
+                id="google-ads-contact-trigger"
               >
                 <Phone
                   className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 mr-2 sm:mr-3"
                   weight="duotone"
                 />
                 <span className="whitespace-nowrap">
-                  CALL NOW - {CONTACT_INFO.phone.display}
+                  CALL/TEXT US NOW - {CONTACT_INFO.phone.display}
                 </span>
               </Button>
 

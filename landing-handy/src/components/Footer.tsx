@@ -19,6 +19,7 @@ const Footer = () => {
               <a
                 href={CONTACT_INFO.phone.href}
                 className="text-xl font-bold text-primary-400 hover:text-primary-300 transition-colors"
+                id="google-ads-contact-trigger"
               >
                 {CONTACT_INFO.phone.display}
               </a>

@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Allow all search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap location
+Sitemap: https://solutions.brasouthgroup.com/sitemap.xml
+
+# Crawl delay (optional - remove if not needed)
+Crawl-delay: 1

@@ -173,9 +173,9 @@ const BenefitsSection = () => {
             behind our work. That's our promise to you.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Button size="lg" className="cta-button" onClick={handleCallClick}>
+            <Button size="lg" className="cta-button" onClick={handleCallClick} id="google-ads-contact-trigger">
               <Phone className="w-5 h-5 mr-2" weight="fill" />
-              Call Now: {CONTACT_INFO.phone.display}
+              Call/Text Us Now: {CONTACT_INFO.phone.display}
             </Button>
             <p className="text-sm text-neutral-600">
               Available 24/7 • Free Estimates • Bonded & Insured

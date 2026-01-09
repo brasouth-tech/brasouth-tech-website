@@ -141,6 +141,7 @@ const GallerySection = () => {
                 size="lg"
                 className="w-full sm:w-auto bg-secondary-500 hover:bg-secondary-600 text-white font-black text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
                 onClick={handleCallClick}
+                id="google-ads-contact-trigger"
               >
                 <span className="whitespace-nowrap">
                   Get Your Quote - {CONTACT_INFO.phone.display}

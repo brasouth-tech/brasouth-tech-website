@@ -33,6 +33,7 @@ const Hero = () => {
               size="sm"
               className="bg-secondary-500 hover:bg-secondary-600 text-white font-bold text-sm sm:text-base hidden sm:flex shrink-0"
               onClick={handlePhoneClick}
+              id="google-ads-contact-trigger"
             >
               <Phone className="w-4 h-4 mr-1 sm:mr-2" weight="duotone" />
               <span className="hidden sm:inline">{CONTACT_INFO.phone.display}</span>
@@ -118,9 +119,10 @@ const Hero = () => {
                   size="lg"
                   className="w-full sm:w-auto bg-secondary-500 hover:bg-secondary-600 text-white font-black text-base sm:text-lg lg:text-xl py-4 sm:py-6 px-6 sm:px-12 transform hover:scale-105 shadow-2xl"
                   onClick={handlePhoneClick}
+                  id="google-ads-contact-trigger"
                 >
                   <Phone className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" weight="duotone" />
-                  <span className="whitespace-nowrap">CALL NOW - {CONTACT_INFO.phone.display}</span>
+                  <span className="whitespace-nowrap">CALL/TEXT US NOW - {CONTACT_INFO.phone.display}</span>
                 </Button>
 
                 <p className="text-center sm:text-left text-blue-100 text-sm sm:text-base lg:text-lg">
@@ -184,9 +186,10 @@ const Hero = () => {
           <Button
             className="w-full bg-white text-secondary-500 hover:bg-gray-100 font-black text-base sm:text-lg py-3 sm:py-4"
             onClick={handlePhoneClick}
+            id="google-ads-contact-trigger"
           >
             <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" weight="duotone" />
-            <span className="whitespace-nowrap">CALL NOW - {CONTACT_INFO.phone.display}</span>
+            <span className="whitespace-nowrap">CALL/TEXT US NOW - {CONTACT_INFO.phone.display}</span>
           </Button>
         </div>
       </div>

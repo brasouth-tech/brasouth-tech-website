@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <url>
+    <loc>https://landing-handy.brasouthgroup.com/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    
+    <!-- Image references for SEO -->
+    <image:image>
+      <image:loc>https://landing-handy.brasouthgroup.com/marketing/crew-ladder-one.jpg</image:loc>
+      <image:caption>Professional handyman crew providing quality home repair services</image:caption>
+      <image:title>Brasouth Solutions Professional Team</image:title>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://landing-handy.brasouthgroup.com/marketing/furniture-assembly-one.jpg</image:loc>
+      <image:caption>Expert furniture assembly services by professional handymen</image:caption>
+      <image:title>Professional Furniture Assembly Service</image:title>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://landing-handy.brasouthgroup.com/marketing/deck-one.jpg</image:loc>
+      <image:caption>Quality deck repair and maintenance services</image:caption>
+      <image:title>Professional Deck Repair Services</image:title>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://landing-handy.brasouthgroup.com/marketing/ceiling-one.jpg</image:loc>
+      <image:caption>Expert ceiling repair and home improvement services</image:caption>
+      <image:title>Professional Ceiling Repair Work</image:title>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://landing-handy.brasouthgroup.com/marketing/lightning-one.jpg</image:loc>
+      <image:caption>Safe and professional electrical repair services</image:caption>
+      <image:title>Licensed Electrical Work Services</image:title>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://landing-handy.brasouthgroup.com/past-jobs/wall-prep-one.jpeg</image:loc>
+      <image:caption>Professional wall preparation and painting services completed project</image:caption>
+      <image:title>Quality Wall Preparation Work Portfolio</image:title>
+    </image:image>
+  </url>
+  
+</urlset>

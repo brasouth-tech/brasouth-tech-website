@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Main Website Pages -->
+  <url>
+    <loc>https://solutions.brasouthgroup.com/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    
+    <!-- Hero Section Images -->
+    <image:image>
+      <image:loc>https://solutions.brasouthgroup.com/marketing/crew-ladder-one.jpg</image:loc>
+      <image:caption>Professional handyman crew providing quality home repair services - Brasouth Solutions team</image:caption>
+      <image:title>Brasouth Solutions Professional Team in Action</image:title>
+    </image:image>
+    
+    <!-- Services Section Images -->
+    <image:image>
+      <image:loc>https://solutions.brasouthgroup.com/marketing/ceiling-one.jpg</image:loc>
+      <image:caption>Professional ceiling repair and home improvement services by Brasouth Solutions</image:caption>
+      <image:title>Expert Ceiling Repair and Interior Work</image:title>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://solutions.brasouthgroup.com/marketing/lightning-one.jpg</image:loc>
+      <image:caption>Safe and professional electrical repair services by licensed Brasouth Solutions technicians</image:caption>
+      <image:title>Licensed Electrical Work and Installations</image:title>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://solutions.brasouthgroup.com/marketing/furniture-assembly-one.jpg</image:loc>
+      <image:caption>Expert furniture assembly services by professional handymen at Brasouth Solutions</image:caption>
+      <image:title>Professional Furniture Assembly Services</image:title>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://solutions.brasouthgroup.com/marketing/deck-one.jpg</image:loc>
+      <image:caption>Quality deck repair and outdoor maintenance services by Brasouth Solutions</image:caption>
+      <image:title>Professional Deck Repair and Outdoor Services</image:title>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://solutions.brasouthgroup.com/marketing/deck-two.jpg</image:loc>
+      <image:caption>Additional deck restoration and outdoor project work examples</image:caption>
+      <image:title>Deck Restoration and Outdoor Project Portfolio</image:title>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://solutions.brasouthgroup.com/marketing/furniture-assembly-two.jpg</image:loc>
+      <image:caption>Additional furniture assembly and installation service examples</image:caption>
+      <image:title>Furniture Assembly and Installation Portfolio</image:title>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://solutions.brasouthgroup.com/marketing/hanging-one.jpg</image:loc>
+      <image:caption>Professional wall mounting and hanging services by Brasouth Solutions</image:caption>
+      <image:title>Wall Mounting and Installation Services</image:title>
+    </image:image>
+    
+    <!-- Gallery Section - Portfolio Images -->
+    <image:image>
+      <image:loc>https://solutions.brasouthgroup.com/past-jobs/wall-prep-one.jpeg</image:loc>
+      <image:caption>Professional wall preparation and painting services completed project - Brasouth Solutions portfolio</image:caption>
+      <image:title>Quality Wall Preparation Work - Project Portfolio</image:title>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://solutions.brasouthgroup.com/past-jobs/wall-prep-two.jpeg</image:loc>
+      <image:caption>Detailed surface preparation and painting project example showing quality craftsmanship</image:caption>
+      <image:title>Surface Preparation and Painting Portfolio</image:title>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://solutions.brasouthgroup.com/past-jobs/wall-prep-three.jpeg</image:loc>
+      <image:caption>Professional wall repair and preparation project demonstrating attention to detail</image:caption>
+      <image:title>Wall Repair and Preparation Services Portfolio</image:title>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://solutions.brasouthgroup.com/past-jobs/wall-prep-four.jpeg</image:loc>
+      <image:caption>Comprehensive wall treatment and preparation for optimal painting results</image:caption>
+      <image:title>Wall Treatment and Preparation Portfolio</image:title>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://solutions.brasouthgroup.com/past-jobs/wall-prep-five.jpeg</image:loc>
+      <image:caption>High-quality finish work demonstrating professional standards and attention to detail</image:caption>
+      <image:title>Professional Finish Work and Quality Standards</image:title>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://solutions.brasouthgroup.com/past-jobs/wall-prep-six.jpeg</image:loc>
+      <image:caption>Expert surface preparation ensuring optimal paint application and longevity</image:caption>
+      <image:title>Expert Surface Preparation and Paint Application</image:title>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://solutions.brasouthgroup.com/past-jobs/wall-prep-seven.jpeg</image:loc>
+      <image:caption>Additional wall preparation and painting project showing consistent quality work</image:caption>
+      <image:title>Wall Preparation and Painting Quality Examples</image:title>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://solutions.brasouthgroup.com/past-jobs/wall-prep-eight.jpeg</image:loc>
+      <image:caption>Professional wall preparation demonstrating meticulous attention to detail and quality</image:caption>
+      <image:title>Meticulous Wall Preparation and Quality Work</image:title>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://solutions.brasouthgroup.com/past-jobs/wall-prep-nine.jpeg</image:loc>
+      <image:caption>Final wall preparation project example showing completed professional work quality</image:caption>
+      <image:title>Completed Professional Wall Preparation Work</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Future pages can be added here -->
+  <!-- Example for future expansion:
+  <url>
+    <loc>https://solutions.brasouthgroup.com/services/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://solutions.brasouthgroup.com/gallery/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://solutions.brasouthgroup.com/contact/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  -->
+  
+</urlset>

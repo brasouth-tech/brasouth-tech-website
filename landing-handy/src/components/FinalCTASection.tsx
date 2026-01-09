@@ -68,9 +68,10 @@ const FinalCTASection = () => {
                   size="lg" 
                   className="w-full md:w-auto text-lg px-8 py-4 bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
                   onClick={handleCallClick}
+                  id="google-ads-contact-trigger"
                 >
                   <Phone className="w-6 h-6 mr-3" weight="fill" />
-                  CALL NOW: {CONTACT_INFO.phone.display}
+                  CALL/TEXT US NOW: {CONTACT_INFO.phone.display}
                 </Button>
 
                 <p className="text-sm text-neutral-600 mt-4">
